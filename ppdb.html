@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPDB SDN Semarangan 5</title>
+
+<link rel="stylesheet" href="assets/css/ppdb.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-left">
+      <img src="assets/karakter/robot.png" alt="Robot">
+      <p class="robot-text" id="robotText">
+    🤖 Halo! Aku <b>SemaBot</b>, siap bantu kamu daftar sekolah!
+  </p>
+    </div>
+
+    <div class="hero-right">
+      
+      <h1>Ayo Daftar di<br>SDN Semarangan 5! 🎓</h1>
+
+      <p><b>Cerdas, Berkarakter, dan Beriman</b></p>
+
+
+
+  </div>
+</section>
+
+<!-- MAIN CARD -->
+<section class="main-card">
+  <div class="container">
+
+    <!-- STEP 1 -->
+    <div id="kodeSection" class="card">
+      <h2>Masukkan Kode PPDB</h2>
+      <input type="text" id="kodeInput" placeholder="Masukkan kode dari sekolah">
+      <button class="btn-primary" onclick="cekKode()">Lanjut</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="formSection" style="display:none;">
+
+      <h2>Formulir Pendaftaran</h2>
+
+      <!-- STEP INDICATOR -->
+      <div class="step-top">
+        <span>Step 1 dari 3</span>
+      </div>
+
+      <!-- PROGRESS -->
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <!-- FORM CARD DALAM -->
+      <div class="card form-card">
+
+        <div id="stepContainer">
+        <div id="summaryContainer"></div>  
+  <!-- STEP 1 -->
+  <div class="step active">
+    <div class="form-group">
+      <label>Nama Siswa</label>
+      <input type="text" id="nama">
+    </div>
+
+    <div class="form-group">
+      <label>Tanggal Lahir</label>
+      <input type="date" id="ttl">
+    </div>
+
+    <div class="form-group">
+      <label>Tempat Lahir</label>
+      <input type="text" id="tempatLahir">
+    </div>
+
+    <div class="form-group">
+      <label>NIK</label>
+      <input type="number" id="nik">
+    </div>
+
+    <div class="form-group">
+      <label>Asal Sekolah</label>
+      <input type="text" id="asalSekolah">
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="form-group">
+      <label>Nama Ayah</label>
+      <input type="text" id="namaAyah">
+    </div>
+
+    <div class="form-group">
+      <label>Nama Ibu</label>
+      <input type="text" id="namaIbu">
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="form-group">
+      <label>Alamat Domisili</label>
+      <input type="text" id="alamatDomisili">
+    </div>
+
+    <div class="form-group">
+      <label>Alamat Sesuai KK</label>
+      <input type="text" id="alamatKK">
+    </div>
+  </div>
+
+</div>
+        
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="nav-btn">
+  <button onclick="prevStep()">← Kembali</button>
+
+  <button id="nextBtn" onclick="nextStep()">Lanjut →</button>
+
+  <button id="submitBtn" onclick="kirimData()" style="display:none;">
+    Daftar Sekarang
+  </button>
+</div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script type="module" src="assets/js/ppdb.js"></script>
+
+</body>
+</html>

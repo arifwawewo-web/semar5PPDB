@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Admin PPDB</title>
+<link rel="stylesheet" href="assets/css/admin.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <b>Admin PPDB SD Ceria</b>
+
+  <div>
+    <button onclick="loadData('SEMUA')">Semua</button>
+    <button onclick="loadData('Menunggu')">Menunggu</button>
+    <button onclick="loadData('Diterima')">Diterima</button>
+    <button onclick="loadData('Ditolak')">Ditolak</button>
+    <button onclick="loadData('SAMPAH')">🗑 Sampah</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card">Total <h2 id="total">0</h2></div>
+    <div class="stat-card">Menunggu <h2 id="menunggu">0</h2></div>
+    <div class="stat-card">Diterima <h2 id="diterima">0</h2></div>
+    <div class="stat-card">Ditolak <h2 id="ditolak">0</h2></div>
+  </div>
+
+  <br>
+
+  <button onclick="exportExcel()" style="
+    padding:10px 14px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+  ">
+    ⬇ Export Excel
+  </button>
+
+  <div id="list"></div>
+
+</div>
+<div id="toast-container"></div>
+<div id="confirmBox" class="confirm-overlay" style="display:none;">
+  <div class="confirm-box">
+    <h3 id="confirmTitle">Konfirmasi</h3>
+    <p id="confirmText">Apakah yakin?</p>
+
+    <div class="confirm-actions">
+      <button id="confirmYes">Ya</button>
+      <button id="confirmNo">Batal</button>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script type="module" src="assets/js/admin.js"></script>
+</body>
+</html>
